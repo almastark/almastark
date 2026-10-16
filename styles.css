@@ -25,3 +25,11 @@
 }
 .project-card--alfra .project-hover-label{letter-spacing:.10em;font-size:clamp(14px,1.7vw,20px)}
 .project-card--alfra p{max-width:none;font-size:13px;line-height:1.5;text-wrap:pretty}
+
+/* Reliable one-time, staggered reveal for all three project cards. */
+@media (prefers-reduced-motion: no-preference){
+ html.has-scroll-reveal #work .project-card{opacity:0;transform:translateY(24px);transition:none!important}
+ html.has-scroll-reveal #work .project-card.is-visible{animation:projectCardFlyIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--reveal-delay,0ms)}
+ @keyframes projectCardFlyIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+}
+.project-card--alfra p{width:100%;max-width:36ch;font-size:13px;line-height:1.55;text-wrap:normal}
