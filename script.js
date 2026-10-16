@@ -4,7 +4,7 @@ if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-moti
  const cards=[...document.querySelectorAll('#work .project-card')];
  if(cards.length){
   document.documentElement.classList.add('has-scroll-reveal');
-  const observer=new IntersectionObserver((entries)=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}},{threshold:.12,rootMargin:'0px 0px -24px 0px'});
+  const observer=new IntersectionObserver((entries)=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}},{threshold:.2,rootMargin:'0px 0px -35px 0px'});
   cards.forEach(card=>observer.observe(card));
  }
 }
