@@ -3,3 +3,14 @@
 
 /* Portfolio-wide square corners; temporary unified design direction. */
 *,*::before,*::after{border-radius:0!important}
+
+/* Only the Alfra project card: clear hover with a restrained one-word invitation. */
+.project-card--alfra .project-image{position:relative}
+.project-card--alfra .project-image img{transition:transform .4s ease,filter .35s ease}
+.project-card--alfra .project-hover-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;background:rgba(36,33,31,.66);color:#fff;font-size:clamp(16px,2vw,22px);font-weight:700;letter-spacing:.14em;opacity:0;transition:opacity .28s ease;pointer-events:none}
+.project-card--alfra .project-hover-arrow{font-size:1.3em;font-weight:400;transition:transform .28s ease}
+.project-card--alfra:hover .project-image img,.project-card--alfra:focus-visible .project-image img{transform:scale(1.035);filter:brightness(.78)}
+.project-card--alfra:hover .project-hover-label,.project-card--alfra:focus-visible .project-hover-label{opacity:1}
+.project-card--alfra:hover .project-hover-arrow,.project-card--alfra:focus-visible .project-hover-arrow{transform:translate(3px,-3px)}
+.project-card--alfra p{max-width:31ch;font-size:14px;line-height:1.55}
+@media(prefers-reduced-motion:reduce){.project-card--alfra .project-image img,.project-card--alfra .project-hover-label,.project-card--alfra .project-hover-arrow{transition:none}}
