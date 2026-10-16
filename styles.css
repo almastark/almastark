@@ -14,3 +14,14 @@
 .project-card--alfra:hover .project-hover-arrow,.project-card--alfra:focus-visible .project-hover-arrow{transform:translate(3px,-3px)}
 .project-card--alfra p{max-width:31ch;font-size:14px;line-height:1.55}
 @media(prefers-reduced-motion:reduce){.project-card--alfra .project-image img,.project-card--alfra .project-hover-label,.project-card--alfra .project-hover-arrow{transition:none}}
+
+/* Three project cards: subtle staggered fly-in only when JS enables it. */
+@media (prefers-reduced-motion:no-preference){
+ html.has-scroll-reveal #work .project-card{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.3,1);transition-delay:var(--reveal-delay,0ms)}
+ html.has-scroll-reveal #work .project-card.is-visible{opacity:1;transform:translateY(0)}
+ #work .project-card:nth-child(1){--reveal-delay:0ms}
+ #work .project-card:nth-child(2){--reveal-delay:110ms}
+ #work .project-card:nth-child(3){--reveal-delay:220ms}
+}
+.project-card--alfra .project-hover-label{letter-spacing:.10em;font-size:clamp(14px,1.7vw,20px)}
+.project-card--alfra p{max-width:none;font-size:13px;line-height:1.5;text-wrap:pretty}
