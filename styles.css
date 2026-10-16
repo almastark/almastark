@@ -29,7 +29,12 @@
 /* Reliable one-time, staggered reveal for all three project cards. */
 @media (prefers-reduced-motion: no-preference){
  html.has-scroll-reveal #work .project-card{opacity:0;transform:translateY(24px);transition:none!important}
- html.has-scroll-reveal #work .project-card.is-visible{animation:projectCardFlyIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--reveal-delay,0ms)}
- @keyframes projectCardFlyIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+ html.has-scroll-reveal #work .project-card.is-visible{animation:projectCardFlyIn 1.45s cubic-bezier(.18,.68,.22,1) both;animation-delay:var(--reveal-delay,0ms)}
+ @keyframes projectCardFlyIn{from{opacity:0;transform:translateY(52px)}to{opacity:1;transform:translateY(0)}}
 }
 .project-card--alfra p{width:100%;max-width:36ch;font-size:13px;line-height:1.55;text-wrap:normal}
+
+/* More perceptible sequencing between the three project cards. */
+#work .project-card:nth-child(1){--reveal-delay:0ms}
+#work .project-card:nth-child(2){--reveal-delay:340ms}
+#work .project-card:nth-child(3){--reveal-delay:680ms}
